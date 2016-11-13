@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+
+<!-- This is the IzPack input file for creating the Setup jar. -->
+
+<izpack:installation version="5.0"
+                     xmlns:izpack="http://izpack.org/schema/installation"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
+
+    <info>
+        <appname>Index of Suspicion</appname>
+        <appversion>0.1</appversion>
+        <javaversion>1.8</javaversion>
+    </info>
+
+    <locale>
+        <langpack iso3="eng"/>
+    </locale>
+
+    <guiprefs width="640" height="480" resizable="yes"/>
+
+    <resources>
+		<res src="install-src/default_shortcut_specification.xml"
+     	 id="shortcutSpec.xml"/>
+    </resources>
+
+	<!-- These allow creating shortcuts under Windows OS. -->
+	<natives>
+    	<native type="izpack" name="ShellLink.dll"/>
+    	<native type="izpack" name="ShellLink_x64.dll"/>
+	</natives>
+	
+    <panels>
+        <panel classname="HelloPanel"/>
+        <!-- TODO need license panel? -->
+        <panel classname="TargetPanel"/>
+        <panel classname="InstallPanel"/>
+        <panel classname="ShortcutPanel"/>
+        <panel classname="FinishPanel"/>
+    </panels>
+
+
+    <packs>
+        <pack name="Base" required="yes">
+            <description>The main application.</description>
+            
+            <file src="build.tmp/IndexOfSuspicion.jar" targetdir="$INSTALL_PATH"/>
+            
+            <file src="../Braids-Java-Utilities/build.tmp/Braids-Java-Utilities.jar" 
+              targetdir="$INSTALL_PATH" />
+              
+            <file src="install-src/ixos.bat" targetdir="$INSTALL_PATH" />
+        </pack>
+    </packs>
+
+</izpack:installation>

@@ -1,0 +1,27 @@
+New output format...
+
+
+Age:  58	Sex: Female
+Chief complaint:  Fatigue
+SpO2:  89%
+Lung sounds:  Crackles
+Other findings:
+* Has prescription for diuretic
+
+Which of the following best matches ~~~...
+A. Heart failure  (note capitals)
+B. xxx
+C  cccccc
+D. DDDD
+-------------------------------------------
+Correct!  Differential diagnoses:
+
+Cardiogenic, acute, pulmonary edema does not typically have the following finding:  
+* Has prescription for diuretic
+
+Emphysema has none of those findings.
+
+Acute, pulmonary edema does not have the following finding:
+* Has prescription for diuretic
+
+-------------------------------------------

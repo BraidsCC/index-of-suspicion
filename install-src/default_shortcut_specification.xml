@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+<izpack:shortcuts version="5.0"
+                  xmlns:izpack="http://izpack.org/schema/shortcuts"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://izpack.org/schema/shortcuts http://izpack.org/schema/5.0/izpack-shortcuts-5.0.xsd">
+
+  <skipIfNotSupported/>
+  <programGroup defaultName="Index of Suspicion"
+                location="startMenu"/>
+
+
+  <!--  former target was ...
+      target="$INSTALL_PATH\IndexOfSuspicion.jar"
+      This works for windowed (e.g., Swing) apps.
+   -->         
+   
+  <shortcut
+    name="Index of Suspicion"
+    target="$INSTALL_PATH\ixos.bat"
+    commandLine=""
+    workingDirectory="$INSTALL_PATH"
+    description=""
+    
+    initialState="normal"
+    programGroup="yes"
+    desktop="yes"
+    applications="no"
+    startMenu="yes"
+    startup="no">
+
+    <createForPack name="Base"/>
+  </shortcut>
+
+  <shortcut
+    name="Uninstall Index of Suspicion"
+    target="$INSTALL_PATH/Uninstaller/Uninstaller.jar"
+    commandLine=""
+    workingDirectory="C:/"
+    description=""
+    
+    initialState="normal"
+    programGroup="yes"
+    desktop="no"
+    applications="no"
+    startMenu="yes"
+    startup="no">
+
+    <createForPack name="Base"/>
+  </shortcut>
+
+
+</izpack:shortcuts>

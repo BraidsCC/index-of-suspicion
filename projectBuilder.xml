@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Ant build file. -->
+	
+<project name="IxOS.makeSetup" default="makeSetup" basedir=".">
+  <target name="makeSetup" 
+   description="Create a Setup jar for the IxOS project.">
+
+  	<mkdir dir="build.tmp"/>
+  	
+  	<!-- Create the manifest. -->
+	<manifest file="build.tmp/MANIFEST.MF">
+	  <attribute name="Main-Class" 
+	   value="cc.braids.app.ixos.console.TextView"/>
+		
+	  <attribute name="Class-Path" 
+		value="Braids-Java-Utilities.jar" />
+	    <!--
+	      value="1.jar 2.jar"/>
+	    -->
+		
+	</manifest>
+
+  	
+  	<!-- Create the jar of everything needed by the application proper. -->
+    <jar jarfile="build.tmp/IndexOfSuspicion.jar" 
+     manifest="build.tmp/MANIFEST.MF">
+      <fileset dir="bin"/>
+    </jar>
+
+  	
+  	<!-- Launch IzPack to create the setup file. -->
+	<exec executable="cmd">
+	  <arg value="/c"/>
+	  <arg value="D:\Program Files (x86)\IzPack\bin\compile.bat"/>
+	  <arg value="install-src/install.xml"/>
+	  <arg value="-o"/>
+	  <arg value="build.tmp/Setup-IxOS.jar"/>
+	</exec>
+
+  </target>
+</project>
+
