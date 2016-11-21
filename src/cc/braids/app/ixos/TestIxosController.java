@@ -201,8 +201,8 @@ public class TestIxosController extends BTestCase {
 		controller.getPossibleAndImpossibleMaladies(correctMaladies,
 		        incorrectMaladies);
 		
-		failUnlessIn(heartAttack, correctMaladies);
-		failIfIn(heartAttack, incorrectMaladies);
+		failUnlessIn("", heartAttack, correctMaladies);
+		failIfIn("", heartAttack, incorrectMaladies);
 		
 		//System.out.println(":Correct maladies are " + repr(correctMaladies));
 		//System.out.println(":Incorrect maladies are " + repr(incorrectMaladies));
@@ -258,16 +258,16 @@ public class TestIxosController extends BTestCase {
 			fail("no correct maladies found");  // regression test
 		}
 
-		failIfIn(anaphylaxisEarly, correctMaladies);
-		failIfIn(compensatedAnaphylacticShock, correctMaladies);
-		failUnlessIn(decompensatedAnaphylacticShock, correctMaladies);
+		failIfIn("", anaphylaxisEarly, correctMaladies);
+		failIfIn("", compensatedAnaphylacticShock, correctMaladies);
+		failUnlessIn("", decompensatedAnaphylacticShock, correctMaladies);
 		
 		List<Malady> choices = 
 				controller.generateMultipleChoiceMaladies(4);
 
-		failUnlessIn(anaphylaxisEarly, choices);
-		failUnlessIn(compensatedAnaphylacticShock, choices);
-		failUnlessIn(decompensatedAnaphylacticShock, choices);
+		failUnlessIn("", anaphylaxisEarly, choices);
+		failUnlessIn("", compensatedAnaphylacticShock, choices);
+		failUnlessIn("", decompensatedAnaphylacticShock, choices);
 		
 		Set<Malady> allWrongPlusOneCorrect = new HashSet<>(incorrectMaladies);
 		allWrongPlusOneCorrect.add(decompensatedAnaphylacticShock);
@@ -474,7 +474,7 @@ public class TestIxosController extends BTestCase {
 		// Make sure the age limiter is in the findings.
 		//
 		
-		failUnlessIn(FindingIlk.AGE_BETWEEN_30_AND_50,
+		failUnlessIn("", FindingIlk.AGE_BETWEEN_30_AND_50,
 			actualFindings
 			.stream()
 			.map(x -> x.getIlk())
