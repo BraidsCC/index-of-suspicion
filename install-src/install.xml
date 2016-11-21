@@ -46,7 +46,8 @@
             
             <file src="build.tmp/IndexOfSuspicion.jar" targetdir="$INSTALL_PATH"/>
             
-            <file src="../Braids-Java-Utilities/build.tmp/Braids-Java-Utilities.jar" 
+            <!-- @TODO switch to Gradle, so we can auto-fetch the jar or such -->
+            <file src="../Braids-Java-Utilities/repos/Braids-Java-Utilities-0.1.2.jar" 
               targetdir="$INSTALL_PATH" />
               
             <file src="install-src/ixos.bat" targetdir="$INSTALL_PATH" />

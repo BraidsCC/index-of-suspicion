@@ -14,7 +14,7 @@
 	   value="cc.braids.app.ixos.console.TextView"/>
 		
 	  <attribute name="Class-Path" 
-		value="Braids-Java-Utilities.jar" />
+		value="Braids-Java-Utilities-0.1.2.jar" />
 	    <!--
 	      value="1.jar 2.jar"/>
 	    -->
